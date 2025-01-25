@@ -5,10 +5,10 @@ import cv2
 import dlib
 import argparse
 import time
-from random import randint
 from PIL import ImageFilter , Image
 import os
 import numpy as np
+import secrets
 
 # handle command line arguments
 modelDir = os.path.abspath("../models")
@@ -92,7 +92,7 @@ def wrinkles_analyse(path):
     # cv2.destroyAllWindows()
     print("wrinkles_analyse end...................")
 
-    return str(randint(90, 99))+'.'+str(end-start).split('.')[1]
+    return str(secrets.SystemRandom().randint(90, 99))+'.'+str(end-start).split('.')[1]
 
 # if __name__ == '__main__':
 #     test = wrinkles_analyse('/home/vinu-dev/Documents/Personal/Research work/CIS/src/Criminal_Identification_System/webapp/static/analyse_img/analyse_img.jpg')
